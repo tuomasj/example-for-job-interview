@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+  table {
+    border: 1px solid gray;
+  }
+  table td {
+    border: 1px solid black;
+  }
+  </style>
+</head>
+<body>
+  <h2>Forwards</h2>
+  <div id="forward_roster"></div>
+  <h2>Defence</h2>
+  <div id="defence_roster"></div>
+
+  <!-- if the output is 'example_output.html', what does example.js look like? -->
+  <script type="text/javascript" src="example.js"></script>
+
+  <script type="text/javascript">
+    var forwards_data = [
+      ["Teemu", "Saku", "Jere"],
+      ["Mikael", "Aleksandr", "Leo"],
+      ["Juhamatti", "Jori", "Valtteri"],
+      ["Antti", "Lauri", "Tuomo"]
+    ];
+    var defencemen_data = [
+      ["Olli", "Kimmo"],
+      ["Sami", "Sami"],
+      ["Lasse", "Ossi"]
+    ];
+
+    var forwards = new Table();
+    forwards.import(forwards_data);
+
+    var defencemen = new Table();
+    defencemen.import(defencemen_data);
+
+    document.querySelector("#forward_roster").innerHTML = forwards.render();
+    document.querySelector("#defence_roster").innerHTML = defencemen.render();
+  </script>
+</body>
+</html>
